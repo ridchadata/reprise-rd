@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Reprendre une entreprise en procédure</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=IBM+Plex+Mono:wght@400;500;600&family=Spline+Sans:wght@400;500;600&display=swap');
+
+:root{
+  --bg:#f4f1ea; --panel:#fbfaf6; --panel2:#efece3; --line:#ddd8cc;
+  --ink:#1f2328; --ink2:#5a6068; --ink3:#8a9099;
+  --gold:#9a6f12; --gold2:#7d5a0d;
+  --green:#1a7f37; --amber:#9a6700; --red:#cf2e4f;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --sans:'Spline Sans',system-ui,sans-serif;
+  --disp:'Fraunces',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--bg);
+  background-image:radial-gradient(circle at 18% 0%,rgba(154,111,18,.07),transparent 44%);
+  background-attachment:fixed;
+  color:var(--ink2);font-family:var(--sans);font-size:15px;line-height:1.62;
+  min-height:100vh;padding:0 20px 80px;
+}
+.sheet{max-width:840px;margin:0 auto}
+
+header{padding:52px 0 30px;border-bottom:2px solid var(--ink);margin-bottom:40px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold2);margin-bottom:14px}
+h1{font-family:var(--disp);font-weight:900;font-size:clamp(30px,5.4vw,46px);line-height:1.08;
+  color:var(--ink);letter-spacing:-.015em;text-wrap:balance;margin-bottom:16px}
+.lede{font-size:17px;max-width:64ch;text-wrap:pretty}
+.lede b{color:var(--ink);font-weight:600}
+
+section{margin-bottom:46px}
+h2{font-family:var(--disp);font-weight:600;font-size:24px;color:var(--ink);
+  letter-spacing:-.01em;margin-bottom:6px;text-wrap:balance}
+.sub{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--ink3);margin-bottom:20px}
+section > p{max-width:66ch;text-wrap:pretty;margin-bottom:14px}
+p b, li b{color:var(--ink);font-weight:600}
+em{font-style:normal;color:var(--ink);font-weight:500}
+
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel);
+  margin-bottom:16px}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:13.5px}
+th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink3);background:var(--panel2)}
+tbody tr:last-child td{border-bottom:none}
+td.name,th.name{color:var(--ink);font-weight:500}
+td.hi{color:var(--ink)}
+.compare thead th:nth-child(3){color:var(--gold2)}
+.compare td:nth-child(3){background:rgba(154,111,18,.045);color:var(--ink)}
+.compare td:first-child{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--ink3);white-space:nowrap;padding-top:16px}
+
+ol,ul{margin:0 0 14px 0;padding-left:0;list-style:none;max-width:66ch}
+ol li,ul li{position:relative;padding-left:30px;margin-bottom:10px;text-wrap:pretty}
+ol{counter-reset:n}
+ol li{counter-increment:n}
+ol li::before{content:counter(n);position:absolute;left:0;top:1px;font-family:var(--mono);
+  font-size:11px;color:var(--gold2);border:1px solid var(--line);background:var(--panel);
+  width:19px;height:19px;border-radius:50%;display:grid;place-items:center}
+ul li::before{content:'';position:absolute;left:7px;top:9px;width:5px;height:5px;
+  border-radius:50%;background:var(--gold)}
+
+.callout{border-left:3px solid var(--gold);background:var(--panel2);padding:19px 23px;
+  border-radius:0 8px 8px 0;font-size:14.5px;max-width:70ch}
+.callout.key{border-left-color:var(--ink);background:var(--panel)}
+.callout p{margin-bottom:10px}
+.callout p:last-child{margin-bottom:0}
+
+.links{display:grid;gap:12px}
+.link{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 22px}
+.link h3{font-family:var(--disp);font-size:18px;font-weight:600;color:var(--ink);margin-bottom:4px}
+.link .url{font-family:var(--mono);font-size:12.5px;margin:8px 0 6px;word-break:break-all}
+.link p{font-size:13.5px;max-width:64ch}
+a{color:var(--gold2);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{color:var(--gold)}
+a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:3px}
+code{font-family:var(--mono);font-size:12.5px;background:var(--panel2);border:1px solid var(--line);
+  border-radius:5px;padding:1px 6px;color:var(--ink)}
+
+.axes{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:14px}
+.axis{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
+.axis h3{font-family:var(--disp);font-size:17px;font-weight:600;color:var(--ink);margin-bottom:5px}
+.axis .q{font-family:var(--mono);font-size:11.5px;color:var(--gold2);margin-bottom:9px}
+.axis p{font-size:13.5px}
+
+footer{border-top:1px solid var(--line);padding-top:22px;font-family:var(--mono);
+  font-size:11.5px;line-height:1.85;color:var(--ink3);max-width:70ch}
+footer b{color:var(--ink2);font-weight:500}
+
+@media(max-width:680px){
+  body{padding:0 16px 60px}
+  header{padding:36px 0 24px;margin-bottom:32px}
+  .link{padding:16px 18px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+<header>
+  <div class="eyebrow">Note de cadrage · Septembre 2026</div>
+  <h1>Reprendre une entreprise<br>en procédure</h1>
+  <p class="lede">Cette note explique à quoi servent les outils de veille que nous avons
+  développés, et surtout <b>pourquoi ils ne parlent pas tous de la même chose</b>. Cinq tableaux
+  y cohabitent, qui ressemblent tous à des listes d'entreprises en difficulté. Quatre le sont
+  vraiment. Le cinquième est l'exact inverse — et c'est celui qu'on comprend le plus souvent
+  de travers.</p>
+</header>
+
+<section>
+  <h2>Deux chasses opposées</h2>
+  <div class="sub">Le point de départ</div>
+  <p>Reprendre une entreprise, ça se fait par deux voies sans rapport l'une avec l'autre. On les
+  confond d'autant plus facilement que l'objectif final est le même.</p>
+  <div class="scroll">
+    <table>
+      <thead>
+        <tr><th></th><th class="name">Transmission volontaire</th><th class="name">Voie judiciaire</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="name">L'entreprise</td>
+          <td>Va bien. Le dirigeant part à la retraite et personne ne reprend derrière lui.</td>
+          <td class="hi">Est devant le tribunal, ou en sort.</td>
+        </tr>
+        <tr>
+          <td class="name">Le prix</td>
+          <td>Celui du marché, négocié sur la valeur.</td>
+          <td class="hi">Décoté, parfois massivement.</td>
+        </tr>
+        <tr>
+          <td class="name">Le tempo</td>
+          <td>Plusieurs mois. On a le temps d'auditer.</td>
+          <td class="hi">Quelques jours à quelques semaines. La date limite de dépôt d'offre ne se négocie pas.</td>
+        </tr>
+        <tr>
+          <td class="name">L'interlocuteur</td>
+          <td>Le dirigeant, ou son conseil.</td>
+          <td class="hi">Un administrateur ou mandataire judiciaire — sauf dans un cas, détaillé plus bas.</td>
+        </tr>
+        <tr>
+          <td class="name">Le risque</td>
+          <td>Payer trop cher.</td>
+          <td class="hi">Reprendre une activité déjà vidée de sa substance, ou se tromper de périmètre.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Nos outils couvrent les deux voies, mais séparément : un pipeline pour la transmission
+  volontaire, un pour la voie judiciaire. Ils n'ont ni les mêmes sources, ni le même rythme,
+  ni les mêmes critères. La suite de cette note porte sur le second, plus dense.</p>
+</section>
+
+<section>
+  <h2>Les cinq tableaux de la veille judiciaire</h2>
+  <div class="sub">Du plus actionnable au plus large</div>
+  <p>La collecte est volontairement sans filtre sectoriel : tout remonte, le tri se fait ensuite.
+  Ce qui distingue les tableaux, ce n'est pas le secteur — c'est le <b>stade de la procédure</b>,
+  donc la manière d'acheter.</p>
+  <div class="scroll">
+    <table>
+      <thead><tr><th class="name">Tableau</th><th>Ce qu'on y trouve</th><th>Ce qu'on en fait</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="name">Appels d'offres</td>
+          <td>Les dossiers réellement mis en vente : chiffre d'affaires, effectif, secteur,
+          date limite de dépôt et étude en charge.</td>
+          <td class="hi">C'est là que se prend la décision de déposer une offre. Le plus actionnable des cinq.</td>
+        </tr>
+        <tr>
+          <td class="name">Sorties de redressement</td>
+          <td>Sociétés dont le tribunal a arrêté un plan de continuation ou de sauvegarde.</td>
+          <td class="hi">Négociation de gré à gré avec l'actionnaire. Ni enchère, ni date limite.</td>
+        </tr>
+        <tr>
+          <td class="name">Redressement judiciaire</td>
+          <td>Entreprises qui tournent encore, sous protection du tribunal.</td>
+          <td class="hi">Plan de cession : on reprend l'activité, les contrats et l'équipe.</td>
+        </tr>
+        <tr>
+          <td class="name">Liquidation</td>
+          <td>Entreprises dont l'activité s'arrête.</td>
+          <td class="hi">Rachat d'actifs isolés : machines, fonds de commerce, stocks décotés.</td>
+        </tr>
+        <tr>
+          <td class="name">Cessions actives</td>
+          <td>La marketplace officielle des mandataires de justice.</td>
+          <td class="hi">Exhaustive et à jour, mais sans données financières. Complète le premier tableau.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>La différence de fond</h2>
+  <div class="sub">Quatre tableaux disent « en difficulté ». Le cinquième dit « en sortie »</div>
+  <p>Quatre de ces tableaux visent des entreprises <em>en</em> difficulté. Un seul vise celles
+  qui en <em>sortent</em> : le tribunal a arrêté un plan, le passif est gelé et rééchelonné sur
+  dix ans au maximum, le ménage social et fiscal est fait. L'activité repart.</p>
+  <p>Mais le financement reste tendu — les banques prêtent mal à une société sous plan — et le
+  dirigeant porte une échéance annuelle pendant des années. D'où un actionnaire souvent
+  <b>structurellement vendeur</b>, sans que l'entreprise soit en péril. Ce n'est pas du tout
+  la même conversation que face à un mandataire.</p>
+  <div class="scroll">
+    <table class="compare">
+      <thead>
+        <tr><th></th><th class="name">Les quatre autres tableaux</th><th class="name">Sorties de redressement</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Situation</td>
+          <td>Dans la procédure collective</td>
+          <td>Sortie de la procédure, plan arrêté</td>
+        </tr>
+        <tr>
+          <td>Qui vend</td>
+          <td>Le tribunal, via un administrateur ou mandataire</td>
+          <td>Le dirigeant, actionnaire de sa société</td>
+        </tr>
+        <tr>
+          <td>Ce qu'on achète</td>
+          <td>Une activité, un fonds, des actifs</td>
+          <td>Les titres de la société</td>
+        </tr>
+        <tr>
+          <td>Comment</td>
+          <td>Offre déposée auprès de l'étude, mise en concurrence</td>
+          <td>Négociation de gré à gré, comme un M&amp;A classique</td>
+        </tr>
+        <tr>
+          <td>Calendrier</td>
+          <td>Imposé, court, non négociable</td>
+          <td>Libre — le tempo d'une opération ordinaire</td>
+        </tr>
+        <tr>
+          <td>Le passif</td>
+          <td>Apuré par la procédure, ne suit pas le repreneur</td>
+          <td>Rééchelonné mais <b>vivant</b> : il suit la société</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Le point contre-intuitif</h2>
+  <div class="sub">La ligne la plus saine de la liste est aussi la plus piégeuse</div>
+  <p>Une société sous plan apparaît dans une veille intitulée « procédures collectives », alors
+  qu'elle est la plus assainie des cinq catégories : son passif a été arrêté, chiffré et rendu
+  opposable par un jugement. Sur le papier, on en sait plus sur elle que sur une entreprise en
+  bonne santé jamais auditée.</p>
+  <div class="callout key">
+    <p><b>Le réflexe à éviter :</b> croire qu'on va déposer une offre auprès de l'administrateur.
+    Il n'y en a plus. La cession judiciaire est terminée, l'entreprise est revenue dans le droit
+    commun. On négocie avec son propriétaire.</p>
+    <p>Et l'avantage apparent — un passif connu au centime près — est aussi la contrainte
+    principale : <b>ce passif reste dû</b>.</p>
+  </div>
+  <p style="margin-top:18px">Trois vérifications sont propres à ce canal, et aucune n'est
+  facultative :</p>
+  <ol>
+    <li><b>L'échéancier restant.</b> Le plan s'impose à la personne morale, pas à l'actionnaire :
+    il suit donc la société quand elle change de mains, et doit figurer tel quel dans le plan
+    d'affaires du repreneur.</li>
+    <li><b>Une éventuelle clause d'inaliénabilité des titres.</b> Le tribunal peut interdire au
+    dirigeant de céder ses parts pendant la durée du plan (article L.626-14 du code de commerce).
+    Si elle existe, l'opération est bloquée avant même d'avoir commencé.</li>
+    <li><b>L'état d'exécution du plan</b>, à demander au commissaire à l'exécution du plan.
+    Un plan en défaut bascule en résolution, puis en liquidation — ce qui change entièrement
+    la nature de ce qu'on achète.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Ce que le pipeline en fait, du coup</h2>
+  <div class="sub">Le traitement automatique s'adapte au canal</div>
+  <p>Puisque ces sociétés ne s'achètent pas comme les autres, elles ne se notent pas comme les
+  autres. Trois ajustements, appliqués automatiquement :</p>
+  <ul>
+    <li><b>L'ancienneté du plan cesse d'être une décote.</b> Ailleurs, un dossier ancien est un
+    mauvais signe. Ici, un plan qui a déjà honoré deux échéances annuelles est plus rassurant
+    qu'un plan tout juste arrêté : il a fait ses preuves. La pénalité est donc neutralisée, et
+    on retient les plans ayant au moins six mois de recul.</li>
+    <li><b>La clarté juridique est relevée très haut.</b> Sous plan, le passif est arrêté,
+    chiffré et opposable — l'incertitude qui pèse sur un dossier en cours de procédure n'existe
+    plus. Le modèle en tient compte dans la note de faisabilité.</li>
+    <li><b>Les groupes sont détectés.</b> Quand plusieurs sociétés sous plan partagent le même
+    dirigeant, le pipeline les regroupe et cumule leur chiffre d'affaires. Ce n'est pas une
+    liste de cibles, c'est <em>une seule opération</em> — avec un interlocuteur unique et des
+    échéanciers à consolider.</li>
+  </ul>
+  <p>Enfin, un filtre d'affichage écarte par défaut les dossiers hors thèse — trop petits, ou
+  dans des secteurs que nous ne couvrons pas. Il ne supprime rien : il range. Les données
+  collectées restent complètes en arrière-plan.</p>
+</section>
+
+<section>
+  <h2>Comment lire un score</h2>
+  <div class="sub">Deux axes, jamais une note unique</div>
+  <p>Une note unique mélangerait deux questions différentes et ferait remonter en tête des
+  dossiers séduisants mais inaccessibles. Le modèle les sépare.</p>
+  <div class="axes">
+    <div class="axis">
+      <h3>Attractivité</h3>
+      <div class="q">Est-ce que ça vaut le coup ?</div>
+      <p>Taille, secteur, productivité par salarié, cohérence avec la thèse d'investissement.</p>
+    </div>
+    <div class="axis">
+      <h3>Faisabilité</h3>
+      <div class="q">Est-ce qu'on peut le faire ?</div>
+      <p>Complexité de la reprise, délai disponible, effectif à absorber, clarté juridique du
+      dossier.</p>
+    </div>
+    <div class="axis">
+      <h3>Confiance</h3>
+      <div class="q">Peut-on se fier au score ?</div>
+      <p>Elle chute quand le chiffre d'affaires est inconnu — le cas de la grande majorité des
+      annonces légales. Un score élevé en confiance faible est une piste, pas une conclusion.</p>
+    </div>
+  </div>
+  <div class="callout" style="margin-top:16px">
+    Le rapport croise les deux axes dans une matrice. Le quadrant utile est celui du haut à
+    droite : <b>attractif et faisable</b>. Un dossier très attractif mais peu faisable ne se
+    jette pas — il se traite autrement, en partenariat ou avec un tour de table élargi.
+  </div>
+</section>
+
+<section>
+  <h2>Accès</h2>
+  <div class="sub">Ce qui est consultable, et par qui</div>
+  <div class="links">
+    <div class="link">
+      <h3>Rapport de veille judiciaire</h3>
+      <div class="url"><a href="https://ridchadata.github.io/reprise-rd/">ridchadata.github.io/reprise-rd</a></div>
+      <p>Le document de travail partagé : environ 1 400 cibles, triables, avec la matrice des
+      deux axes et une page méthodologie. Consultable sur téléphone, Mac et PC, sans installation
+      ni compte à créer. Mis à jour automatiquement à chaque nouvel arrivage de dossiers.</p>
+    </div>
+    <div class="link">
+      <h3>Pipeline de transmission volontaire</h3>
+      <div class="url"><a href="https://pipeline-reprise-rd.streamlit.app/">pipeline-reprise-rd.streamlit.app</a></div>
+      <p>L'autre voie : entreprises saines dont le dirigeant approche de la transmission.
+      Tableau de bord interactif avec filtres par secteur, zone et taille.</p>
+    </div>
+    <div class="link">
+      <h3>Poste de travail interne</h3>
+      <div class="url">Non public</div>
+      <p>Les cinq tableaux décrits plus haut vivent dans une application locale qui permet de
+      filtrer, croiser et relancer une collecte. C'est l'établi ; le rapport en ligne en est
+      la photo, figée et diffusable.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <b>Sources</b> — annonces légales publiques (BODACC) · registre des entreprises ·
+  marketplace officielle des mandataires de justice · récapitulatifs d'appels d'offres transmis
+  par une étude partenaire<br>
+  <b>Mise à jour</b> — automatique, dès réception des dossiers de la semaine<br>
+  <b>Portée</b> — note de cadrage méthodologique. Elle ne constitue ni un conseil juridique,
+  ni une recommandation d'investissement.
+</footer>
+
+</div>
+</body>
+</html>

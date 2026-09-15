@@ -52,7 +52,8 @@ thead th{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-tran
   color:var(--ink3);background:var(--panel2)}
 tbody tr:last-child td{border-bottom:none}
 td.name,th.name{color:var(--ink);font-weight:500}
-td.hi{color:var(--ink)}
+td.name{white-space:nowrap}
+td.hi,td.why{color:var(--ink)}
 .compare thead th:nth-child(3){color:var(--gold2)}
 .compare td:nth-child(3){background:rgba(154,111,18,.045);color:var(--ink)}
 .compare td:first-child{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;
@@ -168,33 +169,37 @@ footer b{color:var(--ink2);font-weight:500}
   donc la manière d'acheter.</p>
   <div class="scroll">
     <table>
-      <thead><tr><th class="name">Tableau</th><th>Ce qu'on y trouve</th><th>Ce qu'on en fait</th></tr></thead>
+      <thead>
+        <tr><th>Tableau</th><th>Ce que c'est</th><th>Pourquoi il existe</th></tr>
+      </thead>
       <tbody>
         <tr>
-          <td class="name">Appels d'offres</td>
-          <td>Les dossiers réellement mis en vente : chiffre d'affaires, effectif, secteur,
-          date limite de dépôt et étude en charge.</td>
-          <td class="hi">C'est là que se prend la décision de déposer une offre. Le plus actionnable des cinq.</td>
+          <td class="name">📄 Appels d'offres<br>cabinet</td>
+          <td>Les dossiers réellement mis en vente, transmis chaque semaine par l'avocat.</td>
+          <td class="why">Dossier chiffré, étude nommée, date limite ferme. <b>C'est ici que se
+          prend la décision de déposer une offre.</b></td>
         </tr>
         <tr>
-          <td class="name">Sorties de redressement</td>
+          <td class="name">🟢 Sorties de<br>redressement</td>
           <td>Sociétés dont le tribunal a arrêté un plan de continuation ou de sauvegarde.</td>
-          <td class="hi">Négociation de gré à gré avec l'actionnaire. Ni enchère, ni date limite.</td>
+          <td class="why">Elles sont sorties de la procédure : on rachète <b>les titres au
+          dirigeant, de gré à gré</b>. Ni enchère, ni date limite.</td>
         </tr>
         <tr>
-          <td class="name">Redressement judiciaire</td>
-          <td>Entreprises qui tournent encore, sous protection du tribunal.</td>
-          <td class="hi">Plan de cession : on reprend l'activité, les contrats et l'équipe.</td>
+          <td class="name">⚖️ Redressement<br>judiciaire</td>
+          <td>L'entreprise tourne encore, sous protection du tribunal.</td>
+          <td class="why">Canal principal : le plan de cession. On reprend l'activité, les
+          contrats et l'équipe.</td>
         </tr>
         <tr>
-          <td class="name">Liquidation</td>
-          <td>Entreprises dont l'activité s'arrête.</td>
-          <td class="hi">Rachat d'actifs isolés : machines, fonds de commerce, stocks décotés.</td>
+          <td class="name">⚖️ Liquidation</td>
+          <td>L'entreprise s'arrête définitivement.</td>
+          <td class="why">Canal opportuniste : machines, fonds de commerce et stocks décotés.</td>
         </tr>
         <tr>
-          <td class="name">Cessions actives</td>
-          <td>La marketplace officielle des mandataires de justice.</td>
-          <td class="hi">Exhaustive et à jour, mais sans données financières. Complète le premier tableau.</td>
+          <td class="name">🏷️ Actify</td>
+          <td>La marketplace officielle des mandataires de justice (CNAJMJ).</td>
+          <td class="why">Cessions publiées en ligne, avec leur date limite de dépôt d'offre.</td>
         </tr>
       </tbody>
     </table>

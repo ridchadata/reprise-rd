@@ -104,19 +104,52 @@ footer b{color:var(--ink2);font-weight:500}
   dl.meta dt{padding-top:10px}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.links{display:grid;gap:12px}
+.link{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 22px}
+.link h3{font-family:var(--disp);font-size:18px;font-weight:600;color:var(--ink);margin-bottom:4px}
+.link .url{font-family:var(--mono);font-size:12.5px;margin:8px 0 6px;word-break:break-all}
+.link p{font-size:13.5px;max-width:64ch}
+.link .tag{vertical-align:middle;margin-left:6px}
+.tag.key{color:var(--blue,#1f6feb);border-color:rgba(31,111,235,.4);background:rgba(31,111,235,.08)}
 </style>
 </head>
 <body>
 <div class="sheet">
 
 <header>
-  <div class="eyebrow">RD Group · Note interne · 13 septembre 2026</div>
+  <div class="eyebrow">RD Group · Note interne · 15 septembre 2026</div>
   <h1>Les outils de reprise :<br>qui fait quoi</h1>
   <p class="lede">Deux projets qui se ressemblent de loin mais cherchent l'inverse l'un de l'autre.
   Le <b>sourcing classique</b> cherche des entreprises en bonne santé dont le dirigeant veut partir.
   La <b>veille à la barre</b> cherche des entreprises déjà devant le tribunal. Prix, délais et
   interlocuteurs n'ont rien à voir.</p>
 </header>
+
+<section>
+  <h2>Accès</h2>
+  <div class="sub">Les trois liens, et pour qui</div>
+  <div class="links">
+    <div class="link">
+      <h3>Rapport de veille judiciaire <span class="tag live">Public</span></h3>
+      <div class="url"><a href="https://ridchadata.github.io/reprise-rd/">ridchadata.github.io/reprise-rd</a></div>
+      <p>La photo figée de la veille : cibles triables, matrice des deux axes, méthodologie.
+      Sans compte ni mot de passe. Pour les membres du CEDIM et les partenaires.</p>
+    </div>
+    <div class="link">
+      <h3>Application de veille judiciaire <span class="tag key">Mot de passe</span></h3>
+      <div class="url"><a href="https://veille-barre-dashboard.streamlit.app/">veille-barre-dashboard.streamlit.app</a></div>
+      <p>L'établi en ligne : les cinq tableaux avec filtres, fiches détaillées et bandeau de
+      mise à jour. Lien public, entrée par mot de passe communiqué par RD Group. Même
+      instantané que le rapport, republié automatiquement.</p>
+    </div>
+    <div class="link">
+      <h3>Pipeline de transmission volontaire <span class="tag local">Interne</span></h3>
+      <div class="url"><a href="https://pipeline-reprise-rd.streamlit.app/">pipeline-reprise-rd.streamlit.app</a></div>
+      <p>L'autre voie : entreprises saines dont le dirigeant approche de la transmission.</p>
+    </div>
+  </div>
+</section>
+
 
 <section>
   <h2><span class="num">01</span>Sourcing classique</h2>
@@ -147,9 +180,9 @@ footer b{color:var(--ink2);font-weight:500}
     <p>Cinq tableaux, rangés du plus actionnable au plus large. La collecte est volontairement
     sans filtre sectoriel : tout remonte, le tri se fait dans l'application.</p>
     <dl class="meta">
-      <dt>Accès</dt><dd><code>http://localhost:8533</code> — double-clic sur <code>Ouvrir_dashboard.command</code></dd>
-      <dt>Rafraîchir</dt><dd>Double-clic sur <code>Rafraichir_veille.command</code></dd>
-      <dt>Pour qui</dt><dd><span class="tag local">Poste de Ridha</span> Ne se partage pas : tourne en local</dd>
+      <dt>Accès</dt><dd><a href="https://veille-barre-dashboard.streamlit.app/">veille-barre-dashboard.streamlit.app</a> <span class="tag key">Mot de passe</span></dd>
+      <dt>En local</dt><dd><code>http://localhost:8533</code> — double-clic sur <code>Ouvrir_dashboard.command</code> (même app, sans mot de passe)</dd>
+      <dt>Pour qui</dt><dd><span class="tag live">En ligne</span> Membres du CEDIM et partenaires, sur mot de passe</dd>
     </dl>
   </div>
 </section>

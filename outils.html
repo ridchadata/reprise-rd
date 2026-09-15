@@ -102,6 +102,8 @@ footer b{color:var(--ink2);font-weight:500}
   .link{padding:16px 18px}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:999px;border:1px solid;white-space:nowrap;vertical-align:middle;margin-left:6px}
+.tag.key{color:var(--blue,#1f6feb);border-color:rgba(31,111,235,.4);background:rgba(31,111,235,.08)}
 </style>
 </head>
 <body>
@@ -116,6 +118,34 @@ footer b{color:var(--ink2);font-weight:500}
   vraiment. Le cinquième est l'exact inverse — et c'est celui qu'on comprend le plus souvent
   de travers.</p>
 </header>
+
+<section>
+  <h2>Accès</h2>
+  <div class="sub">Ce qui est consultable, et par qui</div>
+  <div class="links">
+    <div class="link">
+      <h3>Rapport de veille judiciaire</h3>
+      <div class="url"><a href="https://ridchadata.github.io/reprise-rd/">ridchadata.github.io/reprise-rd</a></div>
+      <p>Le document de travail partagé : environ 1 400 cibles, triables, avec la matrice des
+      deux axes et une page méthodologie. Consultable sur téléphone, Mac et PC, sans installation
+      ni compte à créer. Mis à jour automatiquement à chaque nouvel arrivage de dossiers.</p>
+    </div>
+    <div class="link">
+      <h3>Application de veille judiciaire <span class="tag key">Mot de passe</span></h3>
+      <div class="url"><a href="https://veille-barre-dashboard.streamlit.app/">veille-barre-dashboard.streamlit.app</a></div>
+      <p>Les cinq tableaux décrits plus haut, avec filtres par secteur, région, taille, score et
+      urgence, et la fiche détaillée de chaque dossier. Le lien est public ; l'entrée se fait
+      par un mot de passe communiqué par RD Group. Mise à jour automatique, en même temps que
+      le rapport.</p>
+    </div>
+    <div class="link">
+      <h3>Pipeline de transmission volontaire</h3>
+      <div class="url"><a href="https://pipeline-reprise-rd.streamlit.app/">pipeline-reprise-rd.streamlit.app</a></div>
+      <p>L'autre voie : entreprises saines dont le dirigeant approche de la transmission.
+      Tableau de bord interactif avec filtres par secteur, zone et taille.</p>
+    </div>
+  </div>
+</section>
 
 <section>
   <h2>Deux chasses opposées</h2>
@@ -340,32 +370,6 @@ footer b{color:var(--ink2);font-weight:500}
   </div>
 </section>
 
-<section>
-  <h2>Accès</h2>
-  <div class="sub">Ce qui est consultable, et par qui</div>
-  <div class="links">
-    <div class="link">
-      <h3>Rapport de veille judiciaire</h3>
-      <div class="url"><a href="https://ridchadata.github.io/reprise-rd/">ridchadata.github.io/reprise-rd</a></div>
-      <p>Le document de travail partagé : environ 1 400 cibles, triables, avec la matrice des
-      deux axes et une page méthodologie. Consultable sur téléphone, Mac et PC, sans installation
-      ni compte à créer. Mis à jour automatiquement à chaque nouvel arrivage de dossiers.</p>
-    </div>
-    <div class="link">
-      <h3>Pipeline de transmission volontaire</h3>
-      <div class="url"><a href="https://pipeline-reprise-rd.streamlit.app/">pipeline-reprise-rd.streamlit.app</a></div>
-      <p>L'autre voie : entreprises saines dont le dirigeant approche de la transmission.
-      Tableau de bord interactif avec filtres par secteur, zone et taille.</p>
-    </div>
-    <div class="link">
-      <h3>Poste de travail interne</h3>
-      <div class="url">Non public</div>
-      <p>Les cinq tableaux décrits plus haut vivent dans une application locale qui permet de
-      filtrer, croiser et relancer une collecte. C'est l'établi ; le rapport en ligne en est
-      la photo, figée et diffusable.</p>
-    </div>
-  </div>
-</section>
 
 <footer>
   <b>Sources</b> — annonces légales publiques (BODACC) · registre des entreprises ·
